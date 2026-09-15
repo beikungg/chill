@@ -1,0 +1,643 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* 
+ * 1. Themes Documentation
+ * https://mksaas.com/docs/themes
+
+ * 2. Theme Generator
+ * https://ui.shadcn.com/themes
+ * https://tweakcn.com/
+ * https://ui.pub/x/theme-gen
+ *
+ * default theme: Clean Slate
+ * https://tweakcn.com/editor/theme
+ * 
+ * NOTICE: when you change the theme, you need to check the fonts and keep the animation variables
+ *
+ * 3. How to Add a Theme Selector to Your Next.js App
+ * https://ouassim.tech/notes/how-to-add-a-theme-selector-to-your-nextjs-app/
+ */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --shadow-2xs: var(--shadow-2xs);
+  --shadow-xs: var(--shadow-xs);
+  --shadow-sm: var(--shadow-sm);
+  --shadow: var(--shadow);
+  --shadow-md: var(--shadow-md);
+  --shadow-lg: var(--shadow-lg);
+  --shadow-xl: var(--shadow-xl);
+  --shadow-2xl: var(--shadow-2xl);
+
+  /* fonts — see docs/design-spec.md §2.2 */
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
+  --font-mono: var(--font-mono);
+  --font-cjk: var(--font-cjk);
+
+  /* animate */
+  --animate-shiny-text: shiny-text 8s infinite;
+  --animate-rainbow: rainbow var(--speed, 2s) infinite linear;
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+  --animate-marquee: marquee var(--duration) infinite linear;
+  --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
+  --animate-ripple: ripple var(--duration, 2s) ease calc(var(--i, 0) * .2s)
+    infinite;
+  --animate-pulse: pulse var(--duration) ease-out infinite;
+  --animate-meteor: meteor 5s linear infinite;
+  --animate-gradient: gradient 8s linear infinite;
+  --animate-bounce-slow: bounce-slow 3s ease-in-out infinite;
+  --animate-float: float 6s ease-in-out infinite;
+
+  @keyframes shiny-text {
+    0%,
+    90%,
+    100% {
+      background-position: calc(-100% - var(--shiny-width)) 0;
+    }
+    30%,
+    60% {
+      background-position: calc(100% + var(--shiny-width)) 0;
+    }
+  }
+
+  @keyframes rainbow {
+    0% {
+      background-position: 0%;
+    }
+    100% {
+      background-position: 200%;
+    }
+  }
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-100% - var(--gap)));
+    }
+  }
+
+  @keyframes marquee-vertical {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(calc(-100% - var(--gap)));
+    }
+  }
+
+  @keyframes ripple {
+    0%,
+    100% {
+      transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+      transform: translate(-50%, -50%) scale(0.9);
+    }
+  }
+
+  @keyframes pulse {
+    0%,
+    100% {
+      box-shadow: 0 0 0 0 var(--pulse-color);
+    }
+    50% {
+      box-shadow: 0 0 0 8px var(--pulse-color);
+    }
+  }
+
+  @keyframes meteor {
+    0% {
+      transform: rotate(var(--angle)) translateX(0);
+      opacity: 1;
+    }
+    70% {
+      opacity: 1;
+    }
+    100% {
+      transform: rotate(var(--angle)) translateX(-500px);
+      opacity: 0;
+    }
+  }
+
+  @keyframes gradient {
+    to {
+      background-position: var(--bg-size, 300%) 0;
+    }
+  }
+
+  @keyframes bounce-slow {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  /*
+   * Chili Career — hero lock-on. The single orchestrated moment on the site
+   * (docs/design-spec.md §2.4): a rule draws out from the wordmark while the
+   * reticle settles from 1.4x to 1x. Reads as "aim, then lock".
+   */
+  --animate-lock-rule: lock-rule 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
+  --animate-lock-reticle: lock-reticle 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.15s
+    both;
+  --animate-rise: rise 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+
+  @keyframes lock-rule {
+    from {
+      transform: scaleX(0);
+    }
+    to {
+      transform: scaleX(1);
+    }
+  }
+
+  @keyframes lock-reticle {
+    from {
+      transform: scale(1.4);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  @keyframes rise {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  /*
+   * Chili Career — photographic backdrop drift. A very slow push-in on the
+   * active hero frame, so the ground is never quite static without ever
+   * announcing itself as a slideshow. 1.0 -> 1.04 over the frame's whole hold:
+   * roughly a pixel a second, below the threshold where the eye tracks motion.
+   */
+  --animate-backdrop-drift: backdrop-drift 11s ease-out both;
+
+  @keyframes backdrop-drift {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.04);
+    }
+  }
+
+  /*
+   * Section reveal — the scroll transition, driven by IntersectionObserver via
+   * <Reveal> rather than scroll position, so nothing recalculates on the scroll
+   * thread.
+   *
+   * Three variants rather than one, because a band that translates as a single
+   * block is the house style of every template: the eyebrow settles first, the
+   * heading follows from slightly further down, and the body arrives last. The
+   * offsets are small (10px / 14px) — the layering is what registers, not the
+   * distance. §2.4 still holds: no band exceeds 600ms end to end, and the hero
+   * lock-on remains the only orchestrated moment.
+   */
+  --animate-reveal: reveal 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+  --animate-reveal-band: reveal-band 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+  --animate-reveal-lead: reveal-lead 0.45s cubic-bezier(0.16, 1, 0.3, 1) both;
+  --animate-reveal-rule: reveal-rule 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
+
+  @keyframes reveal {
+    from {
+      opacity: 0;
+      transform: translateY(14px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  /*
+   * The band wrapper. Carries only the lift — the eyebrow and heading fade on
+   * their own schedule, and fading the wrapper as well would multiply the two
+   * opacities into something muddier than either.
+   */
+  @keyframes reveal-band {
+    from {
+      opacity: 0;
+      transform: translateY(14px);
+    }
+    30%,
+    to {
+      opacity: 1;
+    }
+    to {
+      transform: none;
+    }
+  }
+
+  /*
+   * The eyebrow. Arrives on a shorter throw and unmasks left-to-right, so the
+   * reticle reads as locking on before the sentence exists — the same gesture as
+   * the hero, one tenth the scale.
+   */
+  @keyframes reveal-lead {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+      clip-path: inset(0 100% 0 0);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+      clip-path: inset(0 -2% 0 0);
+    }
+  }
+
+  /* A hairline drawing out from the left, as the lock-on rule does. */
+  @keyframes reveal-rule {
+    from {
+      transform: scaleX(0);
+    }
+    to {
+      transform: scaleX(1);
+    }
+  }
+}
+
+/*
+ * Chili Career GmbH — light theme (paper ground)
+ * Token values and measured contrast ratios: docs/design-spec.md §2.1 / §8.2
+ *
+ * NOTICE: --muted-foreground is graphite #4E535A (7.18:1 on paper), NOT
+ * silver #8E9299 — silver measures 2.89:1 on this ground and fails WCAG AA.
+ * Silver is a dark-ground-only token; see .dark below.
+ */
+:root {
+  --background: oklch(0.9734 0.0013 286.38); /* paper    #F6F6F7 */
+  --foreground: oklch(0.1588 0.0045 264.44); /* ink      #0C0D0F */
+  --card: oklch(1.0 0 0); /* surface  #FFFFFF */
+  --card-foreground: oklch(0.1588 0.0045 264.44);
+  --popover: oklch(1.0 0 0);
+  --popover-foreground: oklch(0.1588 0.0045 264.44);
+  --primary: oklch(0.5359 0.199 23.58); /* chili    #C7202F */
+  --primary-foreground: oklch(1.0 0 0);
+  --secondary: oklch(0.9159 0.0042 271.37); /* steel    #E2E3E6 */
+  --secondary-foreground: oklch(0.4403 0.0132 256.75);
+  --muted: oklch(0.9159 0.0042 271.37);
+  --muted-foreground: oklch(0.4403 0.0132 256.75); /* graphite #4E535A */
+  --accent: oklch(0.9159 0.0042 271.37);
+  --accent-foreground: oklch(0.1588 0.0045 264.44);
+  --destructive: oklch(0.64 0.21 25.33);
+  --destructive-foreground: oklch(1.0 0 0);
+  --border: oklch(0.9159 0.0042 271.37); /* steel hairline */
+  --input: oklch(0.9159 0.0042 271.37);
+  --ring: oklch(0.5359 0.199 23.58);
+  --chart-1: oklch(0.5359 0.199 23.58);
+  --chart-2: oklch(0.4403 0.0132 256.75);
+  --chart-3: oklch(0.6589 0.0113 261.78);
+  --chart-4: oklch(0.2038 0.0067 258.37);
+  --chart-5: oklch(0.9159 0.0042 271.37);
+  --sidebar: oklch(1.0 0 0);
+  --sidebar-foreground: oklch(0.1588 0.0045 264.44);
+  --sidebar-primary: oklch(0.5359 0.199 23.58);
+  --sidebar-primary-foreground: oklch(1.0 0 0);
+  --sidebar-accent: oklch(0.9159 0.0042 271.37);
+  --sidebar-accent-foreground: oklch(0.1588 0.0045 264.44);
+  --sidebar-border: oklch(0.9159 0.0042 271.37);
+  --sidebar-ring: oklch(0.5359 0.199 23.58);
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
+  --font-mono: var(--font-mono);
+  --radius: 2px; /* near-square: boutique rigour, not SaaS */
+  --shadow-2xs: 0px 4px 8px -1px hsl(0 0% 0% / 0.05);
+  --shadow-xs: 0px 4px 8px -1px hsl(0 0% 0% / 0.05);
+  --shadow-sm: 0px 4px 8px -1px hsl(0 0% 0% / 0.1), 0px 1px 2px -2px
+    hsl(0 0% 0% / 0.1);
+  --shadow: 0px 4px 8px -1px hsl(0 0% 0% / 0.1), 0px 1px 2px -2px
+    hsl(0 0% 0% / 0.1);
+  --shadow-md: 0px 4px 8px -1px hsl(0 0% 0% / 0.1), 0px 2px 4px -2px
+    hsl(0 0% 0% / 0.1);
+  --shadow-lg: 0px 4px 8px -1px hsl(0 0% 0% / 0.1), 0px 4px 6px -2px
+    hsl(0 0% 0% / 0.1);
+  --shadow-xl: 0px 4px 8px -1px hsl(0 0% 0% / 0.1), 0px 8px 10px -2px
+    hsl(0 0% 0% / 0.1);
+  --shadow-2xl: 0px 4px 8px -1px hsl(0 0% 0% / 0.25);
+}
+
+/*
+ * Chili Career GmbH — dark theme (ink ground)
+ *
+ * NOTICE: --primary shifts to chili-on-dark #E8404F. The light-mode chili
+ * #C7202F only reaches 3.6:1 on ink and would fail AA for body text; #E8404F
+ * measures 4.89:1 on ink and 4.51:1 on dk-surface.
+ * Silver #8E9299 is legitimate here (6.22:1 on ink) and carries meta text.
+ */
+.dark {
+  --background: oklch(0.1588 0.0045 264.44); /* ink        #0C0D0F */
+  --foreground: oklch(0.9607 0.0017 247.84); /* dk-text    #F1F2F3 */
+  --card: oklch(0.2038 0.0067 258.37); /* dk-surface #15171A */
+  --card-foreground: oklch(0.9607 0.0017 247.84);
+  --popover: oklch(0.2038 0.0067 258.37);
+  --popover-foreground: oklch(0.9607 0.0017 247.84);
+  --primary: oklch(0.6231 0.2035 20.75); /* chili-dk   #E8404F */
+  --primary-foreground: oklch(0.1588 0.0045 264.44);
+  --secondary: oklch(0.2713 0.0086 255.58); /* dk-line    #24272B */
+  --secondary-foreground: oklch(0.9607 0.0017 247.84);
+  --muted: oklch(0.2038 0.0067 258.37);
+  --muted-foreground: oklch(0.6589 0.0113 261.78); /* silver #8E9299 */
+  --accent: oklch(0.2713 0.0086 255.58);
+  --accent-foreground: oklch(0.9607 0.0017 247.84);
+  --destructive: oklch(0.6231 0.2035 20.75);
+  --destructive-foreground: oklch(0.1588 0.0045 264.44);
+  --border: oklch(0.2713 0.0086 255.58); /* dk-line hairline */
+  --input: oklch(0.2713 0.0086 255.58);
+  --ring: oklch(0.6231 0.2035 20.75);
+  --chart-1: oklch(0.6231 0.2035 20.75);
+  --chart-2: oklch(0.6589 0.0113 261.78);
+  --chart-3: oklch(0.4403 0.0132 256.75);
+  --chart-4: oklch(0.9159 0.0042 271.37);
+  --chart-5: oklch(0.2713 0.0086 255.58);
+  --sidebar: oklch(0.2038 0.0067 258.37);
+  --sidebar-foreground: oklch(0.9607 0.0017 247.84);
+  --sidebar-primary: oklch(0.6231 0.2035 20.75);
+  --sidebar-primary-foreground: oklch(0.1588 0.0045 264.44);
+  --sidebar-accent: oklch(0.2713 0.0086 255.58);
+  --sidebar-accent-foreground: oklch(0.9607 0.0017 247.84);
+  --sidebar-border: oklch(0.2713 0.0086 255.58);
+  --sidebar-ring: oklch(0.6231 0.2035 20.75);
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
+  --font-mono: var(--font-mono);
+  --radius: 2px;
+  --shadow-2xs: 0px 4px 8px -1px hsl(0 0% 0% / 0.05);
+  --shadow-xs: 0px 4px 8px -1px hsl(0 0% 0% / 0.05);
+  --shadow-sm: 0px 4px 8px -1px hsl(0 0% 0% / 0.1), 0px 1px 2px -2px
+    hsl(0 0% 0% / 0.1);
+  --shadow: 0px 4px 8px -1px hsl(0 0% 0% / 0.1), 0px 1px 2px -2px
+    hsl(0 0% 0% / 0.1);
+  --shadow-md: 0px 4px 8px -1px hsl(0 0% 0% / 0.1), 0px 2px 4px -2px
+    hsl(0 0% 0% / 0.1);
+  --shadow-lg: 0px 4px 8px -1px hsl(0 0% 0% / 0.1), 0px 4px 6px -2px
+    hsl(0 0% 0% / 0.1);
+  --shadow-xl: 0px 4px 8px -1px hsl(0 0% 0% / 0.1), 0px 8px 10px -2px
+    hsl(0 0% 0% / 0.1);
+  --shadow-2xl: 0px 4px 8px -1px hsl(0 0% 0% / 0.25);
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+body {
+  @apply overscroll-none bg-transparent;
+}
+
+.text-gradient_indigo-purple {
+  background: linear-gradient(90deg, #6366f1 0%, rgb(168 85 247 / 0.8) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/*
+ * 1. all the themes are copied from the shadcn-ui dashboard example
+ * https://github.com/shadcn-ui/ui/blob/main/apps/v4/app/(examples)/dashboard/theme.css
+ * https://github.com/TheOrcDev/orcish-dashboard/blob/main/app/globals.css
+ *
+ * 2. we suggest always using the default theme for better user experience,
+ * and then override the .theme-default to customize the theme
+ */
+.theme-default {
+  /* default theme */
+}
+
+.theme-neutral {
+  --primary: var(--color-neutral-600);
+  --primary-foreground: var(--color-neutral-50);
+
+  @variant dark {
+    --primary: var(--color-neutral-500);
+    --primary-foreground: var(--color-neutral-50);
+  }
+}
+
+.theme-blue {
+  --primary: var(--color-blue-600);
+  --primary-foreground: var(--color-blue-50);
+
+  @variant dark {
+    --primary: var(--color-blue-500);
+    --primary-foreground: var(--color-blue-50);
+  }
+}
+
+.theme-green {
+  --primary: var(--color-lime-600);
+  --primary-foreground: var(--color-lime-50);
+
+  @variant dark {
+    --primary: var(--color-lime-600);
+    --primary-foreground: var(--color-lime-50);
+  }
+}
+
+.theme-amber {
+  --primary: var(--color-amber-600);
+  --primary-foreground: var(--color-amber-50);
+
+  @variant dark {
+    --primary: var(--color-amber-500);
+    --primary-foreground: var(--color-amber-50);
+  }
+}
+
+/**
+ * Hide scrollbar for layout shift when using the theme selector
+ */
+/* Hide scrollbar for Chrome, Safari and Opera */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+* {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* ==========================================================================
+ * Chili Career GmbH — trilingual typography
+ * docs/design-spec.md §2.2 / §7.3
+ * ========================================================================== */
+
+/*
+ * German: compound nouns such as Umsatzsteuer-Identifikationsnummer (34 chars)
+ * overflow narrow containers. `hyphens: auto` needs a correct lang attribute to
+ * pick the right hyphenation dictionary — the root <html lang> supplies it.
+ * Headline tracking is loosened one step because long words need less
+ * tightening than English.
+ */
+:lang(de) {
+  hyphens: auto;
+}
+
+:lang(de) h1,
+:lang(de) h2,
+:lang(de) h3 {
+  letter-spacing: -0.02em;
+}
+
+/*
+ * Chinese: Noto Sans SC takes over, tracking resets to zero (CJK glyphs are
+ * already on a fixed em grid), weight drops one step (600 reads too heavy in
+ * Chinese), and leading opens up.
+ */
+:lang(zh) {
+  font-family: var(--font-cjk), var(--font-body), sans-serif;
+  line-height: 1.75;
+  line-break: strict;
+}
+
+:lang(zh) h1,
+:lang(zh) h2,
+:lang(zh) h3 {
+  letter-spacing: 0;
+  font-weight: 500;
+}
+
+/* Headings never break the layout, in any language. */
+h1,
+h2,
+h3,
+h4 {
+  overflow-wrap: break-word;
+  text-wrap: balance;
+}
+
+/* Digits line up in columns wherever they are tabulated. */
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/*
+ * Motion: every brand animation is opt-out. See design-spec.md §2.4 — there are
+ * only four, and none of them are load-bearing for comprehension.
+ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/*
+ * <Reveal> holds its children at opacity 0 until an IntersectionObserver fires.
+ * With JavaScript disabled that observer never runs, so the pending state has to
+ * be released here or the page would render blank.
+ */
+/* The release rule itself lives in a <noscript> block — see reveal.tsx. */
+

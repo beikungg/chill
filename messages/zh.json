@@ -1,0 +1,1161 @@
+{
+  "Metadata": {
+    "name": "Chili Career",
+    "title": "Chili Career — 欧洲人才，精准招募",
+    "description": "Chili Career GmbH 是一家总部位于德国杜塞尔多夫的精品 HR 咨询与高管猎聘公司，连接中国企业与欧洲人才市场。"
+  },
+  "Common": {
+    "login": "登录",
+    "logout": "退出",
+    "signUp": "注册",
+    "requireAuth": {
+      "loading": "正在验证登录状态...",
+      "title": "请先登录",
+      "description": "此页面需要登录后才能访问。请登录您的账号以继续。",
+      "noAccountHint": "还没有账号？点击登录后选择\"注册\""
+    },
+    "language": "切换语言",
+    "mode": {
+      "label": "切换模式",
+      "light": "浅色模式",
+      "dark": "深色模式",
+      "system": "跟随系统"
+    },
+    "theme": {
+      "label": "切换主题",
+      "default": "默认",
+      "blue": "蓝色",
+      "green": "绿色",
+      "amber": "橙色",
+      "neutral": "中性"
+    },
+    "copy": "复制",
+    "save": "保存",
+    "saving": "保存中...",
+    "loading": "加载中...",
+    "cancel": "取消",
+    "logoutFailed": "退出失败",
+    "updateSuccess": "更新成功",
+    "updateFailed": "更新失败",
+    "copied": "已复制到剪贴板",
+    "downloadReport": "下载报告",
+    "copyReport": "复制报告",
+    "startGenerating": "开始生成报告"
+  },
+  "PricingPage": {
+    "title": "价格",
+    "description": "选择最适合您的付费计划",
+    "subtitle": "选择最适合您的付费计划",
+    "monthly": "月付",
+    "yearly": "年付",
+    "PricingCard": {
+      "freePrice": "$0",
+      "perMonth": "/月",
+      "perYear": "/年",
+      "popular": "热门",
+      "currentPlan": "当前方案",
+      "yourCurrentPlan": "您的当前方案",
+      "getStartedForFree": "开始免费使用",
+      "getLifetimeAccess": "开启终身会员",
+      "getStarted": "开始免费试用",
+      "notAvailable": "不可用",
+      "daysTrial": "{days} 天试用期"
+    },
+    "CheckoutButton": {
+      "loading": "加载中...",
+      "checkoutFailed": "打开结账页面失败"
+    }
+  },
+  "PricePlans": {
+    "free": {
+      "name": "免费版",
+      "description": "适用于个人使用的基本功能",
+      "features": {
+        "feature-1": "最多3个项目",
+        "feature-2": "1GB存储空间",
+        "feature-3": "基础分析功能",
+        "feature-4": "社区支持"
+      },
+      "limits": {
+        "limit-1": "不支持自定义域名",
+        "limit-2": "不支持自定义品牌",
+        "limit-3": "不支持终身更新"
+      }
+    },
+    "pro": {
+      "name": "专业版",
+      "description": "专业人士的高级功能",
+      "features": {
+        "feature-1": "无限项目",
+        "feature-2": "10GB存储空间",
+        "feature-3": "高级分析功能",
+        "feature-4": "优先支持",
+        "feature-5": "自定义域名"
+      },
+      "limits": {
+        "limit-1": "不支持自定义品牌",
+        "limit-2": "不支持终身更新"
+      }
+    },
+    "lifetime": {
+      "name": "终身版",
+      "description": "一次性付款获得所有高级功能",
+      "features": {
+        "feature-1": "所有专业版功能",
+        "feature-2": "100GB存储空间",
+        "feature-3": "专属支持",
+        "feature-4": "企业级安全",
+        "feature-5": "高级集成",
+        "feature-6": "自定义域名",
+        "feature-7": "自定义品牌"
+      }
+    }
+  },
+  "NotFoundPage": {
+    "title": "404",
+    "message": "抱歉，您正在寻找的页面不存在",
+    "backToHome": "返回首页"
+  },
+  "ErrorPage": {
+    "title": "哎呀！出错了！",
+    "tryAgain": "重试",
+    "backToHome": "返回首页"
+  },
+  "AboutPage": {
+    "title": "关于我们",
+    "description": "MkSaaS 是一套可直接上线的 SaaS 脚手架，让你专注做产品，而不是重复搭建认证、计费和后台。",
+    "authorName": "MkSaaS",
+    "authorBio": "学术搜索与订阅平台",
+    "introduction": "👋 欢迎！这是你新 SaaS 的关于页面。把这段文案换成你自己的故事、团队与使命即可。此处所有内容都由 `messages/` 下的翻译文件驱动。",
+    "talkWithMe": "联系我们",
+    "followMe": "关注我们"
+  },
+  "ChangelogPage": {
+    "title": "更新日志",
+    "description": "查看我们产品的最新动态",
+    "subtitle": "查看我们产品的最新动态"
+  },
+  "ContactPage": {
+    "title": "联系我们",
+    "description": "我们帮助您找到合适的计划",
+    "subtitle": "我们帮助您找到合适的计划",
+    "form": {
+      "title": "联系我们",
+      "description": "如果您有任何问题或反馈，请随时联系我们的团队",
+      "name": "姓名",
+      "email": "邮箱",
+      "message": "消息",
+      "submit": "提交",
+      "submitting": "提交中...",
+      "success": "消息发送成功",
+      "fail": "消息发送失败",
+      "nameMinLength": "姓名必须至少包含 3 个字符",
+      "nameMaxLength": "姓名必须不超过 30 个字符",
+      "emailValidation": "请输入有效的邮箱地址",
+      "messageMinLength": "消息必须至少包含 10 个字符",
+      "messageMaxLength": "消息必须不超过 500 个字符"
+    }
+  },
+  "WaitlistPage": {
+    "title": "等待队列",
+    "description": "加入等待队列，及时获取最新消息和更新",
+    "subtitle": "加入等待队列，及时获取最新消息和更新",
+    "form": {
+      "title": "加入等待队列",
+      "description": "我们将在产品发布时及时通知您",
+      "email": "邮箱",
+      "subscribe": "加入等待队列",
+      "subscribing": "加入等待队列中...",
+      "success": "加入等待队列成功",
+      "fail": "加入等待队列失败",
+      "emailValidation": "请输入有效的邮箱地址"
+    }
+  },
+  "Newsletter": {
+    "title": "邮件列表",
+    "subtitle": "加入我们的社区",
+    "description": "订阅邮件列表，及时获取最新消息和更新",
+    "form": {
+      "email": "邮箱",
+      "subscribe": "订阅",
+      "subscribing": "订阅中...",
+      "success": "订阅成功",
+      "fail": "订阅失败",
+      "emailValidation": "请输入有效的邮箱地址"
+    }
+  },
+  "AuthPage": {
+    "login": {
+      "title": "登录",
+      "welcomeBack": "欢迎回来",
+      "email": "邮箱",
+      "password": "密码",
+      "signIn": "登录",
+      "signUpHint": "没有账号？注册",
+      "forgotPassword": "忘记密码？",
+      "signInWithGoogle": "使用 Google 登录",
+      "signInWithGitHub": "使用 GitHub 登录",
+      "showPassword": "显示密码",
+      "hidePassword": "隐藏密码",
+      "or": "或以社媒账号登录",
+      "emailRequired": "请输入邮箱",
+      "passwordRequired": "请输入密码"
+    },
+    "register": {
+      "title": "注册",
+      "createAccount": "创建账号",
+      "name": "姓名",
+      "email": "邮箱",
+      "password": "密码",
+      "signUp": "注册",
+      "signInHint": "已经有账号？登录",
+      "checkEmail": "请检查您的邮箱",
+      "showPassword": "显示密码",
+      "hidePassword": "隐藏密码",
+      "nameRequired": "请输入姓名",
+      "emailRequired": "请输入邮箱",
+      "passwordRequired": "请输入密码"
+    },
+    "forgotPassword": {
+      "title": "忘记密码",
+      "email": "邮箱",
+      "send": "发送重置密码链接",
+      "backToLogin": "返回登录",
+      "checkEmail": "请检查您的邮箱",
+      "emailRequired": "请输入邮箱"
+    },
+    "resetPassword": {
+      "title": "重置密码",
+      "password": "密码",
+      "reset": "重置密码",
+      "backToLogin": "返回登录",
+      "showPassword": "显示密码",
+      "hidePassword": "隐藏密码",
+      "minLength": "密码必须至少包含 8 个字符"
+    },
+    "error": {
+      "title": "哎呀！出错了！",
+      "tryAgain": "请重试",
+      "backToLogin": "返回登录",
+      "checkEmail": "请检查您的邮箱"
+    },
+    "common": {
+      "termsOfService": "服务条款",
+      "privacyPolicy": "隐私政策",
+      "byClickingContinue": "继续即表示您同意我们的 ",
+      "and": " 和 "
+    }
+  },
+  "BlogPage": {
+    "title": "博客",
+    "description": "来自我们的团队最新新闻和更新",
+    "subtitle": "来自我们的团队最新新闻和更新",
+    "author": "作者",
+    "categories": "分类",
+    "tableOfContents": "目录",
+    "readTime": "{minutes} 分钟阅读",
+    "all": "全部",
+    "noPostsFound": "没有找到文章",
+    "allPosts": "全部文章",
+    "morePosts": "更多文章"
+  },
+  "DocsPage": {
+    "toc": "目录",
+    "search": "搜索文档",
+    "lastUpdate": "最后更新于",
+    "searchNoResult": "没有结果",
+    "previousPage": "上一页",
+    "nextPage": "下一页",
+    "chooseLanguage": "选择语言",
+    "title": "MkSaaS文档",
+    "homepage": "首页",
+    "blog": "博客"
+  },
+  "Marketing": {
+    "navbar": {
+      "home": {
+        "title": "首页"
+      },
+      "features": {
+        "title": "功能"
+      },
+      "pricing": {
+        "title": "价格"
+      },
+      "blog": {
+        "title": "博客"
+      },
+      "docs": {
+        "title": "文档"
+      },
+      "ai": {
+        "title": "AI 工具",
+        "items": {
+          "text": {
+            "title": "AI 文本",
+            "description": "展示如何使用 AI 生成精彩文本"
+          },
+          "image": {
+            "title": "AI 图像",
+            "description": "展示如何使用 AI 生成精美图像"
+          },
+          "video": {
+            "title": "AI 视频",
+            "description": "展示如何使用 AI 生成惊人视频"
+          },
+          "audio": {
+            "title": "AI 音频",
+            "description": "展示如何使用 AI 生成动听音频"
+          }
+        }
+      },
+      "pages": {
+        "title": "内置页面",
+        "items": {
+          "about": {
+            "title": "关于我们",
+            "description": "了解更多关于我们的公司、使命和价值观"
+          },
+          "contact": {
+            "title": "联系我们",
+            "description": "与我们的团队联系，以获取支持或咨询"
+          },
+          "waitlist": {
+            "title": "邮件列表",
+            "description": "加入我们的邮件列表，获取最新消息和更新"
+          },
+          "changelog": {
+            "title": "更新日志",
+            "description": "查看我们产品的更新历史，查看最新动态"
+          },
+          "roadmap": {
+            "title": "路线图",
+            "description": "探索我们的未来计划和即将推出的功能"
+          },
+          "cookiePolicy": {
+            "title": "Cookie 政策",
+            "description": "关于我们如何在网站上使用 Cookie 的信息"
+          },
+          "privacyPolicy": {
+            "title": "隐私政策",
+            "description": "关于我们将如何保护和处理您在网站上的数据"
+          },
+          "termsOfService": {
+            "title": "服务条款",
+            "description": "关于您与我们公司之间的法律协议和条款"
+          }
+        }
+      },
+      "blocks": {
+        "title": "内置组件",
+        "items": {
+          "magicui": {
+            "title": "MagicUI 组件"
+          },
+          "hero-section": {
+            "title": "Hero 组件"
+          },
+          "logo-cloud": {
+            "title": "Logo Cloud 组件"
+          },
+          "features": {
+            "title": "Features 组件"
+          },
+          "integrations": {
+            "title": "Integrations 组件"
+          },
+          "content": {
+            "title": "Content 组件"
+          },
+          "stats": {
+            "title": "Stats 组件"
+          },
+          "team": {
+            "title": "Team 组件"
+          },
+          "testimonials": {
+            "title": "Testimonials 组件"
+          },
+          "callToAction": {
+            "title": "Call to Action 组件"
+          },
+          "footer": {
+            "title": "Footer 组件"
+          },
+          "pricing": {
+            "title": "Pricing 组件"
+          },
+          "comparator": {
+            "title": "Comparator 组件"
+          },
+          "faq": {
+            "title": "FAQs 组件"
+          },
+          "login": {
+            "title": "Login 组件"
+          },
+          "signup": {
+            "title": "Signup 组件"
+          },
+          "forgot-password": {
+            "title": "Forgot Password 组件"
+          },
+          "contact": {
+            "title": "Contact 组件"
+          }
+        }
+      },
+      "services": {
+        "title": "服务",
+        "items": {
+          "recruitment": {
+            "title": "招聘",
+            "description": "专业岗位与技术人才的精准交付"
+          },
+          "executiveSearch": {
+            "title": "高管猎聘",
+            "description": "C-Level 与关键领导岗位的直接搜寻"
+          },
+          "hrConsulting": {
+            "title": "HR 咨询",
+            "description": "组织架构、薪酬体系与 HR 策略"
+          }
+        }
+      },
+      "testimonials": {
+        "title": "用户反馈"
+      },
+      "partners": {
+        "title": "合作机构"
+      },
+      "events": {
+        "title": "近期活动"
+      },
+      "contact": {
+        "title": "联系我们"
+      }
+    },
+    "footer": {
+      "tagline": "我们不搜寻，我们瞄准。",
+      "product": {
+        "title": "产品",
+        "items": {
+          "features": "功能特性",
+          "pricing": "价格方案",
+          "faq": "常见问题"
+        }
+      },
+      "resources": {
+        "title": "帮助中心",
+        "items": {
+          "blog": "博客",
+          "docs": "使用文档",
+          "changelog": "更新日志",
+          "roadmap": "开发路线"
+        }
+      },
+      "company": {
+        "title": "公司",
+        "items": {
+          "about": "关于我们",
+          "contact": "联系我们",
+          "waitlist": "订阅动态",
+          "events": "近期活动"
+        }
+      },
+      "legal": {
+        "title": "法律信息",
+        "items": {
+          "cookiePolicy": "Cookie政策",
+          "privacyPolicy": "隐私政策",
+          "termsOfService": "服务条款",
+          "imprint": "公司信息",
+          "privacy": "数据保护"
+        }
+      },
+      "services": {
+        "title": "服务",
+        "items": {
+          "recruitment": "招聘",
+          "executiveSearch": "高管猎聘",
+          "hrConsulting": "HR 咨询"
+        }
+      }
+    },
+    "avatar": {
+      "dashboard": "工作台",
+      "billing": "账单",
+      "settings": "设置"
+    }
+  },
+  "Dashboard": {
+    "dashboard": {
+      "title": "工作台",
+      "welcome": "欢迎回来！",
+      "subtitle": "这里是你的账户活动概览。"
+    },
+    "admin": {
+      "title": "系统管理",
+      "users": {
+        "title": "用户管理",
+        "fakeData": "注：只为演示功能，数据为假数据，封禁功能不可用",
+        "error": "获取用户失败",
+        "search": "搜索用户...",
+        "columns": {
+          "columns": "显示列",
+          "name": "姓名",
+          "email": "邮箱",
+          "role": "角色",
+          "createdAt": "创建时间",
+          "customerId": "客户ID",
+          "status": "状态",
+          "banReason": "封禁原因",
+          "banExpires": "封禁到期时间"
+        },
+        "noResults": "没有结果",
+        "firstPage": "第一页",
+        "lastPage": "最后一页",
+        "nextPage": "下一页",
+        "previousPage": "上一页",
+        "rowsPerPage": "每页行数",
+        "page": "页",
+        "loading": "加载中...",
+        "admin": "管理员",
+        "user": "用户",
+        "email": {
+          "verified": "邮箱已验证",
+          "unverified": "邮箱未验证"
+        },
+        "emailCopied": "邮箱已复制到剪贴板",
+        "banned": "账号被封禁",
+        "active": "账号正常",
+        "joined": "加入时间",
+        "updated": "更新时间",
+        "ban": {
+          "reason": "封禁原因",
+          "reasonPlaceholder": "请输入封禁该用户的原因",
+          "defaultReason": "垃圾信息",
+          "never": "永不解禁",
+          "expires": "封禁到期时间",
+          "selectDate": "选择日期",
+          "button": "封禁用户",
+          "success": "用户已被封禁",
+          "error": "封禁用户失败"
+        },
+        "unban": {
+          "button": "解除封禁",
+          "success": "用户已被解除封禁",
+          "error": "解除封禁失败"
+        },
+        "close": "关闭"
+      }
+    },
+    "settings": {
+      "title": "设置",
+      "profile": {
+        "title": "账户",
+        "description": "管理您的账户信息",
+        "avatar": {
+          "title": "头像",
+          "description": "点击上传按钮上传自定义头像",
+          "recommendation": "头像是可选的，但强烈推荐设置",
+          "uploading": "上传中...",
+          "uploadAvatar": "上传头像",
+          "success": "头像更新成功",
+          "fail": "更新头像失败"
+        },
+        "name": {
+          "title": "名字",
+          "description": "请输入您的名字",
+          "placeholder": "名字",
+          "minLength": "请至少使用 3 个字符",
+          "maxLength": "请最多使用 30 个字符",
+          "hint": "请使用 3-30 个字符",
+          "success": "名字更新成功",
+          "fail": "更新名字失败",
+          "saving": "保存中...",
+          "save": "保存"
+        }
+      },
+      "billing": {
+        "title": "账单",
+        "description": "管理您的订阅和账单信息",
+        "status": {
+          "active": "已激活",
+          "trial": "试用中",
+          "free": "免费版",
+          "lifetime": "终身版"
+        },
+        "interval": {
+          "month": "月",
+          "year": "年",
+          "oneTime": "一次性"
+        },
+        "currentPlan": {
+          "title": "当前方案",
+          "description": "您当前的方案详情",
+          "noPlan": "您没有激活的方案"
+        },
+        "CustomerPortalButton": {
+          "loading": "加载中...",
+          "createCustomerPortalFailed": "打开Stripe客户界面失败"
+        },
+        "price": "价格：",
+        "nextBillingDate": "下次账单日期：",
+        "trialEnds": "试用结束日期：",
+        "freePlanMessage": "您当前使用的是功能有限的免费方案",
+        "lifetimeMessage": "您拥有所有高级功能的终身使用权限",
+        "manageSubscription": "管理订阅和账单",
+        "manageBilling": "管理账单",
+        "upgradePlan": "升级方案",
+        "retry": "重试",
+        "errorMessage": "获取数据失败"
+      },
+      "notification": {
+        "title": "通知",
+        "description": "管理您的通知设置",
+        "notificationSettings": "通知设置",
+        "managePreferences": "管理您的通知偏好设置",
+        "noSettings": "当前暂无需要配置的通知设置",
+        "autoEmail": "订阅与产品通知会自动发送到您的邮箱",
+        "newsletter": {
+          "title": "订阅",
+          "description": "管理您的邮件列表订阅偏好",
+          "label": "订阅邮件列表",
+          "hint": "您可以随时更改订阅偏好",
+          "emailRequired": "订阅邮件列表需要邮箱",
+          "subscribeSuccess": "成功订阅邮件列表",
+          "subscribeFail": "订阅邮件列表失败",
+          "unsubscribeSuccess": "成功取消订阅邮件列表",
+          "unsubscribeFail": "取消订阅邮件列表失败",
+          "error": "更新订阅时发生错误"
+        }
+      },
+      "security": {
+        "title": "安全",
+        "description": "管理您的安全设置",
+        "updatePassword": {
+          "title": "修改密码",
+          "description": "输入您的当前密码和新密码",
+          "currentPassword": "当前密码",
+          "currentRequired": "当前密码是必填项",
+          "newPassword": "新密码",
+          "newMinLength": "密码必须至少包含 8 个字符",
+          "hint": "请至少使用 8 个字符作为密码",
+          "showPassword": "显示密码",
+          "hidePassword": "隐藏密码",
+          "success": "密码更新成功",
+          "fail": "更新密码失败",
+          "saving": "保存中...",
+          "save": "保存"
+        },
+        "resetPassword": {
+          "title": "重置密码",
+          "description": "重置密码以启用邮箱登录",
+          "info": "重置密码将允许您除了社交登录方式外，还可以使用邮箱和密码登录，您将收到一封包含重置密码链接的电子邮件",
+          "button": "重置密码"
+        },
+        "deleteAccount": {
+          "title": "删除账号",
+          "description": "永久删除您的账号和所有内容",
+          "warning": "此操作是不可逆的，请谨慎操作",
+          "button": "删除账号",
+          "confirmTitle": "删除账号",
+          "confirmDescription": "您确定要删除您的账号吗？此操作无法撤销",
+          "confirm": "删除",
+          "cancel": "取消",
+          "deleting": "删除中...",
+          "success": "账号删除成功",
+          "fail": "删除账号失败"
+        }
+      }
+    },
+    "upgrade": {
+      "title": "升级",
+      "description": "升级到Pro以获取所有功能",
+      "button": "升级"
+    }
+  },
+  "Mail": {
+    "common": {
+      "team": "{name} 团队",
+      "copyright": "©️ {year} 版权所有。"
+    },
+    "verifyEmail": {
+      "title": "你好，{name}。",
+      "body": "请点击下面的链接验证您的邮箱地址。",
+      "confirmEmail": "确认邮箱",
+      "subject": "验证您的邮箱"
+    },
+    "forgotPassword": {
+      "title": "你好，{name}。",
+      "body": "请点击下面的链接重置您的密码。",
+      "resetPassword": "重置密码",
+      "subject": "重置您的密码"
+    },
+    "subscribeNewsletter": {
+      "body": "感谢您订阅我们的邮件列表，我们将为您提供最新的新闻和更新。",
+      "subject": "感谢您的订阅"
+    },
+    "contactMessage": {
+      "name": "姓名: {name}",
+      "email": "邮箱: {email}",
+      "message": "消息: {message}",
+      "subject": "来自网站的联系消息"
+    }
+  },
+  "HomePage": {
+    "title": "MkSaaS",
+    "description": "使用 MkSaaS 在几天内轻松构建您的 AI SaaS 产品",
+    "hero": {
+      "title": "使用 MkSaaS 轻松构建您的 AI SaaS 产品",
+      "description": "MkSaaS 是构建 AI SaaS 的最佳模板，内置 AI、身份验证、全球支付、博客、文档、邮件订阅、SEO、多彩主题、丰富组件等。",
+      "introduction": "介绍 MkSaaS 模板",
+      "primary": "开始使用",
+      "secondary": "查看演示"
+    },
+    "logocloud": {
+      "title": "您最爱公司都是我们的合作伙伴"
+    },
+    "integration": {
+      "title": "集成",
+      "subtitle": "与您最喜欢的工具集成",
+      "description": "无缝连接流行的平台和服务，以增强您的工作流程。",
+      "learnMore": "了解更多",
+      "items": {
+        "item-1": {
+          "title": "Google Gemini",
+          "description": "这里是Google Gemini的描述，详细介绍Google Gemini的功能和优势。"
+        },
+        "item-2": {
+          "title": "Replit",
+          "description": "这里是Replit的描述，详细介绍Replit的功能和优势。"
+        },
+        "item-3": {
+          "title": "MagicUI",
+          "description": "这里是MagicUI的描述，详细介绍MagicUI的功能和优势。"
+        },
+        "item-4": {
+          "title": "VSCodium",
+          "description": "这里是VSCodium的描述，详细介绍VSCodium的功能和优势。"
+        },
+        "item-5": {
+          "title": "MediaWiki",
+          "description": "这里是MediaWiki的描述，详细介绍MediaWiki的功能和优势。"
+        },
+        "item-6": {
+          "title": "Google PaLM",
+          "description": "这里是Google PaLM的描述，详细介绍Google PaLM的功能和优势。"
+        }
+      }
+    },
+    "integration2": {
+      "title": "与您最喜欢的工具集成",
+      "description": "无缝连接流行的平台和服务，以增强您的工作流程。",
+      "primaryButton": "开始使用",
+      "secondaryButton": "查看演示"
+    },
+    "features": {
+      "title": "功能",
+      "subtitle": "您的 SaaS 产品功能",
+      "description": "请在这里介绍您的 SaaS 产品的特色功能的信息",
+      "items": {
+        "item-1": {
+          "title": "产品特色功能一",
+          "description": "请在这里详细描述您的产品特色功能一，尽可能详细，使其更吸引用户，提高落地页的转化率"
+        },
+        "item-2": {
+          "title": "产品特色功能二",
+          "description": "请在这里详细描述您的产品特色功能二，尽可能详细，使其更吸引用户，提高落地页的转化率"
+        },
+        "item-3": {
+          "title": "产品特色功能三",
+          "description": "请在这里详细描述您的产品特色功能三，尽可能详细，使其更吸引用户，提高落地页的转化率"
+        },
+        "item-4": {
+          "title": "产品特色功能四",
+          "description": "请在这里详细描述您的产品特色功能四，尽可能详细，使其更吸引用户，提高落地页的转化率"
+        }
+      }
+    },
+    "features2": {
+      "title": "功能2",
+      "subtitle": "您的 SaaS 产品功能",
+      "description": "请在这里介绍您的 SaaS 产品的特色功能的信息",
+      "feature-1": "特色功能特点一",
+      "feature-2": "特色功能特点二",
+      "feature-3": "特色功能特点三",
+      "feature-4": "特色功能特点四"
+    },
+    "features3": {
+      "title": "功能3",
+      "subtitle": "您的 SaaS 产品功能",
+      "description": "请在这里介绍您的 SaaS 产品的特色功能的信息",
+      "items": {
+        "item-1": {
+          "title": "产品特色功能一",
+          "description": "请在这里详细描述您的产品特色功能一，尽可能详细，使其更吸引用户"
+        },
+        "item-2": {
+          "title": "产品特色功能二",
+          "description": "请在这里详细描述您的产品特色功能二，尽可能详细，使其更吸引用户"
+        },
+        "item-3": {
+          "title": "产品特色功能三",
+          "description": "请在这里详细描述您的产品特色功能三，尽可能详细，使其更吸引用户"
+        },
+        "item-4": {
+          "title": "产品特色功能四",
+          "description": "请在这里详细描述您的产品特色功能四，尽可能详细，使其更吸引用户"
+        },
+        "item-5": {
+          "title": "产品特色功能五",
+          "description": "请在这里详细描述您的产品特色功能五，尽可能详细，使其更吸引用户"
+        },
+        "item-6": {
+          "title": "产品特色功能六",
+          "description": "请在这里详细描述您的产品特色功能六，尽可能详细，使其更吸引用户"
+        }
+      }
+    },
+    "pricing": {
+      "title": "价格",
+      "subtitle": "价格",
+      "description": "选择最适合您的付费计划"
+    },
+    "faqs": {
+      "title": "常见问题",
+      "subtitle": "如果您有任何问题，请随时联系我们",
+      "items": {
+        "item-1": {
+          "question": "你们提供免费试用吗？",
+          "answer": "是的，我们提供7天的免费试用。"
+        },
+        "item-2": {
+          "question": "如何取消我的订阅？",
+          "answer": "您可以通过访问账单页面取消您的订阅。"
+        },
+        "item-3": {
+          "question": "我可以更改我的计划吗？",
+          "answer": "是的，您可以随时通过访问账单页面更改您的计划。"
+        },
+        "item-4": {
+          "question": "你们的退款政策是什么？",
+          "answer": "是的，我们提供30天的退款保证。"
+        },
+        "item-5": {
+          "question": "找不到您想问的问题？",
+          "answer": "请联系我们的客户支持团队，邮箱地址：2473910949@qq.com"
+        }
+      }
+    },
+    "testimonials": {
+      "title": "客户评价",
+      "subtitle": "我们的客户对我们的评价",
+      "items": {
+        "item-1": {
+          "name": "Jonathan Yombo",
+          "role": "软件工程师",
+          "image": "https://randomuser.me/api/portraits/men/1.jpg",
+          "quote": "MkSaaS 非常出色且实用，无需费心，一个真正的金矿。"
+        },
+        "item-2": {
+          "name": "Yves Kalume",
+          "role": "Android GDE",
+          "image": "https://randomuser.me/api/portraits/men/6.jpg",
+          "quote": "没有网页设计经验，我只需几分钟就可以用 Tailwindcss 重新设计我的整个网站，感谢 MkSaaS。"
+        },
+        "item-3": {
+          "name": "Yucel Faruksahan",
+          "role": "Tailkits 创建者",
+          "image": "https://randomuser.me/api/portraits/men/7.jpg",
+          "quote": "MkSaaS 模板做得很好，这是我见过最好的 SaaS 模板，没有之一 :)"
+        },
+        "item-4": {
+          "name": "Anonymous author",
+          "role": "产品经理",
+          "image": "https://randomuser.me/api/portraits/men/8.jpg",
+          "quote": "我不熟悉 Tailwind，我想自己做一些页面，我在网上搜索了很多英雄页面和区块。然而，大多数都没有给我一个清晰的想法，或者需要一些 HTML/CSS 编码背景来从原始文件中做一些更改，或者太贵了。我下载了其中一个 MkSaaS 模板，它非常容易理解，你可以在开始时修改代码/区块以完美地适应你的页面目的。"
+        },
+        "item-5": {
+          "name": "Shekinah Tshiokufila",
+          "role": "高级软件工程师",
+          "image": "https://randomuser.me/api/portraits/men/4.jpg",
+          "quote": "MkSaaS 正在重新定义网页设计标准，这些区块为那些喜欢美丽但可能缺乏时间实现它的人提供了简单且高效的方式。我只能推荐这个不可思议的奇迹。"
+        },
+        "item-6": {
+          "name": "Oketa Fred",
+          "role": "全栈开发工程师",
+          "image": "https://randomuser.me/api/portraits/men/2.jpg",
+          "quote": "我绝对喜欢 MkSaaS！这些组件区块设计精美且易于使用，使创建一个出色的网站变得轻而易举。"
+        },
+        "item-7": {
+          "name": "Zeki",
+          "role": "ChatExtend 创始人",
+          "image": "https://randomuser.me/api/portraits/men/5.jpg",
+          "quote": "使用 MkSaaS 就像解锁了一个秘密的设计超能力。它是简单性和多功能性的完美融合，使我们能够创建既令人惊叹又用户友好的界面。"
+        },
+        "item-8": {
+          "name": "Joseph Kitheka",
+          "role": "全栈开发工程师",
+          "image": "https://randomuser.me/api/portraits/men/9.jpg",
+          "quote": "MkSaaS 改变了我的网页开发方式。他们的 UI 组件、区块和模板极大地加速了我的工作流程。定制每个方面的灵活性使我能够创建独特的用户体验。MkSaaS 是现代网页开发的游戏规则改变者！"
+        },
+        "item-9": {
+          "name": "Khatab Wedaa",
+          "role": "MerakiUI 创建者",
+          "image": "https://randomuser.me/api/portraits/men/10.jpg",
+          "quote": "MkSaaS 是一个优雅、干净且响应式的 SaaS 模板，它非常有助于快速开始您的项目。"
+        },
+        "item-10": {
+          "name": "Rodrigo Aguilar",
+          "role": "TailwindAwesome 创建者",
+          "image": "https://randomuser.me/api/portraits/men/11.jpg",
+          "quote": "我爱 MkSaaS ❤️。这些组件区块结构良好，易于使用，设计精美。它使创建一个出色的网站变得非常容易。"
+        },
+        "item-11": {
+          "name": "Eric Ampire",
+          "role": "Google 开发者专家",
+          "image": "https://randomuser.me/api/portraits/men/12.jpg",
+          "quote": "MkSaaS 模板是任何想要创建一个美丽且功能齐全的网站但没有网页设计经验的人的完美解决方案。这些模板易于使用，可定制，并且响应迅速。我强烈推荐 MkSaaS 模板给任何想要创建网站的人。"
+        },
+        "item-12": {
+          "name": "Roland Tubonge",
+          "role": "软件工程师",
+          "image": "https://randomuser.me/api/portraits/men/13.jpg",
+          "quote": "MkSaaS 设计得如此出色，即使没有网页设计经验，您也可以创造奇迹。让自己被吸引！"
+        }
+      }
+    },
+    "stats": {
+      "title": "统计",
+      "subtitle": "MkSaaS 相关的数字",
+      "description": "MkSaaS 可让您在几天内轻松构建您的 AI SaaS",
+      "items": {
+        "item-1": {
+          "title": "GitHub 上的星星"
+        },
+        "item-2": {
+          "title": "使用 MkSaaS 的活跃用户"
+        },
+        "item-3": {
+          "title": "使用 MkSaaS 启动的应用"
+        }
+      }
+    },
+    "calltoaction": {
+      "title": "立即开始",
+      "description": "加入数千名研究人员，发现前沿学术文献",
+      "primaryButton": "开始搜索",
+      "secondaryButton": "查看定价"
+    }
+  },
+  "AITextPage": {
+    "title": "AI 文本",
+    "description": "AI 驱动的文本生成和分析",
+    "content": "正在开发中"
+  },
+  "AIImagePage": {
+    "title": "AI 图片",
+    "description": "AI 驱动的图片生成和处理",
+    "content": "正在开发中"
+  },
+  "AIVideoPage": {
+    "title": "视频描述",
+    "description": "AI 驱动的视频内容分析和描述",
+    "content": "正在开发中"
+  },
+  "AIAudioPage": {
+    "title": "AI 音频",
+    "description": "AI 驱动的音频生成和处理",
+    "content": "正在开发中"
+  },
+  "ChiliCareer": {
+    "brand": {
+      "name": "Chili Career",
+      "legalName": "Chili Career GmbH",
+      "claim": "我们不搜寻，我们瞄准。",
+      "claimHighlight": "瞄准",
+      "city": "杜塞尔多夫",
+      "country": "德国",
+      "coordinates": "51.2277° N, 6.7735° E"
+    },
+    "cta": {
+      "primary": "开始对话",
+      "learnMore": "了解更多",
+      "allEvents": "全部活动"
+    },
+    "hero": {
+      "eyebrow": "德国 · 杜塞尔多夫 51.2277° N, 6.7735° E",
+      "title": "Chili Career",
+      "subtitleLine1": "欧洲人才，",
+      "subtitleLine2": "精准招募。"
+    },
+    "positioning": {
+      "eyebrow": "关于我们",
+      "title": "两个市场，同一种精确。",
+      "titleHighlight": "精确",
+      "left": {
+        "title": "中国企业",
+        "subtitle": "Chinese Enterprises",
+        "body": "我们理解中国企业的决策链、汇报结构，以及进入新区域市场的扩张节奏。"
+      },
+      "right": {
+        "title": "欧洲人才市场",
+        "subtitle": "European Talent",
+        "body": "我们熟悉本地薪酬基准、劳动法，以及德国与欧洲资深候选人的真实期望。"
+      },
+      "summary": "Chili Career GmbH 总部位于杜塞尔多夫，为中国企业在德国及欧洲的人才招聘、Executive Search 与 HR 咨询提供支持。"
+    },
+    "services": {
+      "eyebrow": "我们的服务",
+      "title": "三种合作方式。",
+      "items": {
+        "recruitment": {
+          "number": "01",
+          "title": "招聘",
+          "body": "在欧洲市场精准定位并交付专业岗位与技术人才。"
+        },
+        "executiveSearch": {
+          "number": "02",
+          "title": "高管猎聘",
+          "body": "针对 C-Level 与业务关键领导岗位的直接搜寻、评估与顾问服务。"
+        },
+        "hrConsulting": {
+          "number": "03",
+          "title": "HR 咨询",
+          "body": "面向市场进入与增长阶段的组织设计、薪酬框架与 HR 策略。"
+        }
+      }
+    },
+    "testimonials": {
+      "eyebrow": "用户反馈",
+      "title": "客户评价。"
+    },
+    "partners": {
+      "eyebrow": "合作机构",
+      "title": "我们的网络。"
+    },
+    "events": {
+      "eyebrow": "近期活动",
+      "title": "在这些场合见到我们。"
+    },
+    "contact": {
+      "eyebrow": "联系我们",
+      "title": "开始对话。",
+      "titleHighlight": "对话",
+      "body": "告诉我们您在欧洲的招聘需求，我们会在两个工作日内回复。",
+      "or": "或",
+      "email": "hello@chilicareer.de"
+    },
+    "form": {
+      "name": "姓名",
+      "company": "公司",
+      "email": "邮箱",
+      "phone": "电话",
+      "enquiryType": "咨询类型",
+      "enquiryPlaceholder": "请选择",
+      "enquiryOptions": {
+        "recruitment": "招聘",
+        "executiveSearch": "高管猎聘",
+        "hrConsulting": "HR 咨询",
+        "other": "其他"
+      },
+      "message": "留言",
+      "consent": "我同意为回复本次咨询而处理我的个人信息，详见<link>隐私政策</link>。",
+      "submit": "发送咨询",
+      "submitting": "发送中…",
+      "success": "感谢您的咨询，我们会在两个工作日内回复。",
+      "fail": "咨询发送失败，请重试或直接发送邮件给我们。",
+      "retention": "您的信息仅用于回复本次咨询，处理完毕后即会删除。",
+      "nameMin": "姓名至少需要 3 个字符",
+      "nameMax": "姓名不能超过 30 个字符",
+      "companyMin": "公司名称至少需要 2 个字符",
+      "companyMax": "公司名称不能超过 80 个字符",
+      "emailInvalid": "请输入有效的邮箱地址",
+      "phoneMax": "电话不能超过 40 个字符",
+      "enquiryRequired": "请选择咨询类型",
+      "messageMin": "留言至少需要 10 个字符",
+      "messageMax": "留言不能超过 500 个字符",
+      "consentRequired": "需要同意隐私政策才能提交"
+    },
+    "pages": {
+      "services": {
+        "eyebrow": "我们的服务",
+        "title": "招聘、高管猎聘、HR 咨询。",
+        "subtitle": "三类委托，同一套方法：先把目标定准，再直接触达。",
+        "scenariosLabel": "适用场景",
+        "processLabel": "交付流程",
+        "recruitment": {
+          "statement": "依据明确定义的岗位画像，在欧洲市场交付专业与技术人才。",
+          "scenarios": [
+            "进入市场后组建第一支本地团队",
+            "候选人稀缺的工程、质量或供应链岗位",
+            "此前搜寻受阻的岗位补位"
+          ],
+          "process": [
+            "需求界定与市场画像",
+            "定向触达与初步筛选",
+            "结构化评估与 Shortlist",
+            "薪酬谈判支持与试用期跟进"
+          ]
+        },
+        "executiveSearch": {
+          "statement": "面向 C-Level 与业务关键领导岗位的直接搜寻，含评估与顾问服务。",
+          "scenarios": [
+            "为欧洲实体任命首位总经理",
+            "业务关键领导岗位的继任安排",
+            "在职人员的保密替换"
+          ],
+          "process": [
+            "任职要求与治理结构对齐",
+            "保密方式的市场触达",
+            "深度评估与背景核实",
+            "入职与前 100 天陪跑"
+          ]
+        },
+        "hrConsulting": {
+          "statement": "面向市场进入与增长阶段的组织设计、薪酬框架与 HR 策略。",
+          "scenarios": [
+            "为新设欧洲实体搭建 HR 架构",
+            "将薪酬对标本地基准",
+            "组织规模已超出原有架构时的梳理"
+          ],
+          "process": [
+            "现状梳理与对标分析",
+            "目标模型与薪酬设计",
+            "落地路线图",
+            "首个经营周期后复盘"
+          ]
+        }
+      },
+      "testimonials": {
+        "eyebrow": "用户反馈",
+        "title": "客户评价。",
+        "subtitle": "具名推荐人可在客户同意的前提下按需提供。",
+        "empty": "推荐人信息可按需直接提供。"
+      },
+      "partners": {
+        "eyebrow": "合作机构",
+        "title": "我们的网络。",
+        "subtitle": "欧洲与中国的商会、行业协会及合作机构。"
+      },
+      "events": {
+        "eyebrow": "近期活动",
+        "title": "在这些场合见到我们。",
+        "subtitle": "路演、论坛、简报与行业活动，包含已举办与即将举办的。",
+        "upcoming": "即将举办",
+        "past": "已举办",
+        "empty": "下一批日期正在确认中。"
+      },
+      "contact": {
+        "eyebrow": "联系我们",
+        "title": "开始对话。",
+        "subtitle": "告诉我们您在欧洲的招聘需求，我们会在两个工作日内回复。",
+        "directLabel": "直接联系",
+        "officeLabel": "办公地址",
+        "formLabel": "发送询盘"
+      }
+    }
+  }
+}

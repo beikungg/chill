@@ -1,0 +1,546 @@
+<title>Chili Career Identity</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Source+Sans+3:wght@400;600&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;700&display=swap">
+<style>
+  :root{
+    --ink:#0C0D0F; --paper:#F6F6F7; --surface:#FFFFFF;
+    --chili:#C7202F; --chili-dk:#E8404F; --chili-press:#A81A27;
+    --graphite:#4E535A; --silver:#8E9299; --steel:#E2E3E6;
+    --dk-surface:#15171A; --dk-text:#F1F2F3; --dk-line:#24272B;
+    --display:'Archivo','Helvetica Neue',Arial,sans-serif;
+    --body:'Source Sans 3','Helvetica Neue',Arial,sans-serif;
+    --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+    --cjk:'Noto Sans SC',var(--body);
+    --pad:80px; --max:1280px;
+  }
+  /* Deliberate single-theme design: this is a brand identity sheet, so the
+     ink/paper band rhythm IS the identity and must not invert with the viewer's
+     OS theme. Every color is painted from a token and body sets its own ground,
+     so the page holds on either host background. The live Next.js site does
+     ship both themes — see §8.2 of docs/design-spec.md for the .dark tokens. */
+  :root{color-scheme:light}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);
+       font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+  .zh{font-family:var(--cjk)}
+
+  /* ---------- band system ---------- */
+  .band{padding:120px var(--pad);width:100%}
+  .band-dark{background:var(--ink);color:var(--dk-text)}
+  .band-light{background:var(--paper);color:var(--ink)}
+  .inner{max-width:var(--max);margin:0 auto}
+
+  /* ---------- reticle + eyebrow ---------- */
+  .eyebrow{display:flex;align-items:center;gap:10px;font-family:var(--mono);
+           font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;
+           color:var(--graphite);margin:0 0 28px}
+  .band-dark .eyebrow{color:var(--silver)}
+  .reticle{flex:none;width:9px;height:9px;position:relative}
+  .reticle::before,.reticle::after{content:'';position:absolute;background:var(--chili)}
+  .reticle::before{left:4px;top:0;width:1px;height:9px}
+  .reticle::after{top:4px;left:0;height:1px;width:9px}
+  .band-dark .reticle::before,.band-dark .reticle::after{background:var(--chili-dk)}
+
+  /* ---------- type scale ---------- */
+  h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;overflow-wrap:break-word}
+  h1{font-size:76px;line-height:1.02;font-weight:600;letter-spacing:-.03em}
+  h2{font-size:44px;line-height:1.1;font-weight:600;letter-spacing:-.02em}
+  h3{font-size:24px;line-height:1.25;font-weight:600;letter-spacing:-.01em}
+  p{margin:0;max-width:68ch}
+  .lede{font-size:24px;line-height:1.4;color:var(--graphite)}
+  .band-dark .lede{color:var(--silver)}
+  .sub{font-size:15px;line-height:1.6;color:var(--graphite)}
+  .band-dark .sub{color:var(--silver)}
+  .mono{font-family:var(--mono);font-size:13px;letter-spacing:.02em;font-variant-numeric:tabular-nums}
+  .red{color:var(--chili)}
+  .band-dark .red{color:var(--chili-dk)}
+</style>
+<style>
+  /* ---------- buttons / links ---------- */
+  .btn{display:inline-flex;align-items:center;gap:10px;background:var(--chili);color:#fff;
+       font-family:var(--display);font-size:16px;font-weight:600;letter-spacing:.01em;
+       padding:15px 26px;border:0;border-radius:2px;text-decoration:none;cursor:pointer;
+       transition:background .15s ease}
+  .btn:hover{background:var(--chili-press)}
+  .btn:focus-visible{outline:2px solid var(--chili-dk);outline-offset:3px}
+  .lnk{font-family:var(--display);font-size:15px;font-weight:600;color:inherit;
+       text-decoration:none;display:inline-flex;align-items:center;gap:7px;position:relative}
+  .lnk::after{content:'';position:absolute;left:0;bottom:-3px;width:100%;height:1px;
+              background:var(--chili);transform:scaleX(0);transform-origin:left;
+              transition:transform .18s ease}
+  .lnk:hover::after{transform:scaleX(1)}
+  .band-dark .lnk::after{background:var(--chili-dk)}
+  .lnk:focus-visible{outline:2px solid var(--chili);outline-offset:4px;border-radius:1px}
+
+  /* ---------- nav ---------- */
+  .nav{position:sticky;top:0;z-index:20;background:rgba(12,13,15,.92);
+       backdrop-filter:blur(10px);border-bottom:1px solid var(--dk-line)}
+  .nav-in{max-width:var(--max);margin:0 auto;padding:0 var(--pad);height:68px;
+          display:flex;align-items:center;gap:36px}
+  .brand{display:flex;align-items:center;gap:9px;font-family:var(--display);
+         font-size:17px;font-weight:700;letter-spacing:-.02em;color:var(--dk-text);
+         text-decoration:none}
+  .brand .reticle{width:11px;height:11px}
+  .brand .reticle::before{left:5px;height:11px}
+  .brand .reticle::after{top:5px;width:11px}
+  .nav-links{display:flex;gap:26px;margin-left:14px;list-style:none;padding:0;margin-block:0}
+  .nav-links a{font-size:14.5px;font-weight:600;font-family:var(--display);
+               color:var(--silver);text-decoration:none;transition:color .15s}
+  .nav-links a:hover,.nav-links a[aria-current]{color:var(--dk-text)}
+  .nav-right{margin-left:auto;display:flex;align-items:center;gap:20px}
+  .langs{display:flex;gap:2px;font-family:var(--mono);font-size:12px;letter-spacing:.06em}
+  .langs button{background:0;border:0;color:var(--silver);cursor:pointer;padding:5px 7px;
+                font:inherit;border-radius:2px}
+  .langs button[aria-pressed=true]{color:var(--dk-text);background:var(--dk-line)}
+  .nav .btn{padding:10px 18px;font-size:14px}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;min-height:82vh;display:flex;align-items:center;
+        background:var(--ink);color:var(--dk-text);overflow:hidden;
+        padding:96px var(--pad)}
+  .hero-tex{position:absolute;inset:0 0 auto auto;width:42%;height:100%;pointer-events:none;
+            background:repeating-linear-gradient(135deg,rgba(255,255,255,.04) 0 1px,transparent 1px 4px);
+            mask-image:linear-gradient(to left,#000,transparent)}
+  .hero-in{position:relative;max-width:var(--max);margin:0 auto;width:100%}
+  .hero h1{margin:0}
+  .rule{height:1px;background:var(--chili-dk);width:280px;margin:22px 0 30px;
+        transform-origin:left;animation:lock .6s cubic-bezier(.16,1,.3,1) .15s both}
+  @keyframes lock{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+  .hero h2{font-size:44px;font-weight:500;color:var(--silver);letter-spacing:-.02em}
+  .claim{font-family:var(--display);font-size:24px;font-weight:600;margin:30px 0 40px;
+         letter-spacing:-.01em}
+  .hero .eyebrow{animation:fade .5s ease .05s both}
+  @keyframes fade{from{opacity:0}to{opacity:1}}
+</style>
+<style>
+  /* ---------- positioning (02) ---------- */
+  .split{display:grid;grid-template-columns:1fr 1px 1fr;gap:0;margin:44px 0 40px;
+         border-top:1px solid var(--steel);border-bottom:1px solid var(--steel)}
+  .split-col{padding:32px 40px 32px 0}
+  .split-col:last-child{padding:32px 0 32px 40px}
+  .split-line{background:var(--steel)}
+  .split h3{margin:0 0 4px}
+  .split .cn{font-family:var(--cjk);font-size:20px;font-weight:500;color:var(--graphite);
+              display:block;margin-bottom:14px}
+
+  /* ---------- services (03) ---------- */
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:44px}
+  .svc{border:1px solid var(--steel);border-radius:2px;padding:32px 28px 28px;
+       background:var(--surface);display:flex;flex-direction:column;gap:14px;
+       transition:border-color .18s ease}
+  .svc:hover{border-color:var(--chili)}
+  .svc-no{font-family:var(--mono);font-size:13px;font-weight:500;color:var(--silver);
+          letter-spacing:.08em;transition:color .18s ease}
+  .svc:hover .svc-no{color:var(--chili)}
+  .svc h3{min-height:60px}
+  .svc .sub{flex:1}
+  .svc .lnk{margin-top:6px;align-self:flex-start}
+
+  /* ---------- testimonial (04) ---------- */
+  .quote{max-width:900px}
+  .qmark{font-family:var(--mono);font-size:48px;line-height:1;color:var(--chili-dk);
+         display:block;margin-bottom:8px}
+  .quote blockquote{margin:0;font-family:var(--display);font-size:28px;line-height:1.35;
+                    font-weight:500;letter-spacing:-.015em;max-width:34ch}
+  .attrib{margin-top:26px;display:flex;flex-direction:column;gap:3px}
+  .dots{display:flex;gap:6px;margin-top:40px}
+  .dots i{width:3px;height:3px;background:var(--dk-line);display:block}
+  .dots i:first-child{background:var(--chili-dk);width:16px}
+
+  /* ---------- partners (05) ---------- */
+  .wall{display:grid;grid-template-columns:repeat(5,1fr);gap:56px;align-items:center;
+        margin-top:48px}
+  .plogo{height:32px;display:flex;align-items:center;justify-content:center;
+         font-family:var(--display);font-size:15px;font-weight:700;letter-spacing:.02em;
+         color:var(--graphite);filter:grayscale(1);opacity:.55;
+         transition:opacity .18s ease,filter .18s ease;text-align:center}
+  .plogo:hover{opacity:1;filter:grayscale(0)}
+
+  /* ---------- events (06) ---------- */
+  .ev{border:1px solid var(--steel);border-radius:2px;overflow:hidden;background:var(--surface);
+      display:flex;flex-direction:column}
+  .ev-img{aspect-ratio:3/2;filter:grayscale(1);transition:filter .25s ease;
+          background:var(--steel);position:relative}
+  .ev:hover .ev-img{filter:grayscale(0)}
+  .ev-body{padding:20px 22px 24px;display:flex;flex-direction:column;gap:7px}
+  .ev-meta{display:flex;gap:14px;font-family:var(--mono);font-size:13px;
+           font-variant-numeric:tabular-nums}
+  .ev-date{color:var(--chili);font-weight:500}
+  .ev-loc{color:var(--graphite)}
+  .ev h3{font-size:20px}
+  .ev-type{font-size:13px;color:var(--silver);font-family:var(--mono);letter-spacing:.06em;
+           text-transform:uppercase}
+  .row-end{display:flex;justify-content:flex-end;margin-top:32px}
+
+  /* ---------- contact (07) ---------- */
+  .ctc{display:flex;flex-wrap:wrap;gap:32px;align-items:center;margin:34px 0 44px}
+  .or{font-family:var(--mono);font-size:13px;color:var(--silver)}
+
+  /* ---------- footer ---------- */
+  .foot{background:var(--ink);color:var(--silver);border-top:1px solid var(--dk-line);
+        padding:64px var(--pad) 32px}
+  .foot-in{max-width:var(--max);margin:0 auto}
+  .foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:48px}
+  .foot h4{font-family:var(--display);font-size:13px;font-weight:600;letter-spacing:.1em;
+           text-transform:uppercase;color:var(--dk-text);margin:0 0 16px}
+  .foot ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px}
+  .foot a{color:var(--silver);text-decoration:none;font-size:15px}
+  .foot a:hover{color:var(--dk-text)}
+  .foot-bar{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
+            border-top:1px solid var(--dk-line);margin-top:52px;padding-top:24px;
+            font-family:var(--mono);font-size:12.5px}
+</style>
+<style>
+  /* ---------- spec annotation strip ---------- */
+  .spec{background:var(--dk-surface);color:var(--silver);padding:56px var(--pad);
+        border-block:1px solid var(--dk-line)}
+  .spec-in{max-width:var(--max);margin:0 auto}
+  .spec h4{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+           color:var(--dk-text);margin:0 0 24px;font-weight:500}
+  .sw{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+  .sw div{border:1px solid var(--dk-line);border-radius:2px;overflow:hidden}
+  .sw span{display:block;height:56px}
+  .sw p{font-family:var(--mono);font-size:11px;padding:8px 10px;margin:0;line-height:1.5;
+        color:var(--silver)}
+  .sw b{color:var(--dk-text);display:block;font-weight:500}
+  .ratios{margin-top:28px;font-family:var(--mono);font-size:12.5px;line-height:2;
+          columns:2;column-gap:48px}
+  .ratios i{color:var(--chili-dk);font-style:normal}
+  .ok{color:#5FBF7F}
+
+  /* ---------- section label for mockup reading ---------- */
+  .marker{position:absolute;left:0;top:0;font-family:var(--mono);font-size:11px;
+          letter-spacing:.14em;color:var(--chili);padding:8px 10px;
+          border:1px solid var(--chili);border-radius:2px;opacity:.75}
+  .band,.hero{position:relative}
+
+  /* ---------- responsive ---------- */
+  @media (max-width:1080px){
+    :root{--pad:40px}
+    h1{font-size:56px} h2{font-size:36px}
+    .grid3{grid-template-columns:1fr 1fr}
+    .wall{grid-template-columns:repeat(3,1fr);gap:40px}
+    .sw{grid-template-columns:repeat(3,1fr)}
+    .nav-links{display:none}
+  }
+  @media (max-width:680px){
+    :root{--pad:24px}
+    body{font-size:16px}
+    .band{padding:80px var(--pad)}
+    h1{font-size:40px;letter-spacing:-.02em} h2{font-size:30px}
+    .hero h2{font-size:28px} .claim{font-size:20px}
+    .quote blockquote{font-size:22px}
+    .split{grid-template-columns:1fr}
+    .split-col,.split-col:last-child{padding:26px 0}
+    .split-line{height:1px}
+    .split-col:first-child{border-bottom:1px solid var(--steel)}
+    .grid3{grid-template-columns:1fr}
+    .wall{grid-template-columns:1fr 1fr;gap:32px}
+    .ratios{columns:1}
+    .foot-grid{grid-template-columns:1fr;gap:36px}
+    .sw{grid-template-columns:1fr 1fr}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    .rule{transform:none}
+  }
+  /* German long-compound safety */
+  [lang=de]{hyphens:auto}
+  [lang=zh]{font-family:var(--cjk);line-height:1.75;line-break:strict}
+  [lang=zh] h1,[lang=zh] h2,[lang=zh] h3{letter-spacing:0;font-weight:500}
+</style>
+
+<nav class="nav">
+  <div class="nav-in">
+    <a class="brand" href="#"><i class="reticle"></i>Chili Career</a>
+    <ul class="nav-links">
+      <li><a href="#" aria-current="page">Home</a></li>
+      <li><a href="#svc">Services</a></li>
+      <li><a href="#test">Testimonials</a></li>
+      <li><a href="#part">Partners</a></li>
+      <li><a href="#ev">Events</a></li>
+      <li><a href="#ctc">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="langs" role="group" aria-label="Language">
+        <button type="button" aria-pressed="true">EN</button>
+        <button type="button" aria-pressed="false">DE</button>
+        <button type="button" aria-pressed="false" lang="zh">中文</button>
+      </div>
+      <a class="btn" href="#ctc">Start a Conversation</a>
+    </div>
+  </div>
+</nav>
+<header class="hero">
+  <span class="marker">01 HERO</span>
+  <div class="hero-tex" aria-hidden="true"></div>
+  <div class="hero-in">
+    <p class="eyebrow"><i class="reticle"></i>Düsseldorf · 51.2277° N, 6.7735° E</p>
+    <h1>Chili Career</h1>
+    <div class="rule"></div>
+    <h2>European Talent.<br>Strategic Hiring.</h2>
+    <p class="claim">We don't search. We <span class="red">target</span>.</p>
+    <a class="btn" href="#ctc">Start a Conversation <span aria-hidden="true">→</span></a>
+  </div>
+</header>
+
+<section class="band band-light">
+  <span class="marker">02 POSITIONING</span>
+  <div class="inner">
+    <p class="eyebrow"><i class="reticle"></i>Who we are</p>
+    <h2>Two markets. One standard of <span class="red">precision</span>.</h2>
+    <div class="split">
+      <div class="split-col">
+        <h3>Chinese Enterprises</h3>
+        <span class="cn">中国企业</span>
+        <p class="sub">We understand decision chains, reporting structures and the pace at
+          which Chinese companies expand into a new region.</p>
+      </div>
+      <div class="split-line" aria-hidden="true"></div>
+      <div class="split-col">
+        <h3>European Talent</h3>
+        <span class="cn">欧洲人才市场</span>
+        <p class="sub">We know local salary benchmarks, labour law and what senior
+          candidates in Germany and Europe actually expect.</p>
+      </div>
+    </div>
+    <p>Chili Career GmbH is headquartered in Düsseldorf and supports Chinese companies
+      with recruitment, Executive Search and HR consulting across Germany and Europe.</p>
+  </div>
+</section>
+
+<section class="band band-light" id="svc" style="padding-top:0">
+  <span class="marker">03 SERVICES</span>
+  <div class="inner">
+    <p class="eyebrow"><i class="reticle"></i>What we do</p>
+    <h2>Three ways we work.</h2>
+    <div class="grid3">
+      <article class="svc">
+        <span class="svc-no">01</span>
+        <h3>Recruitment</h3>
+        <p class="sub">Targeted identification and delivery of specialist and technical
+          talent across European markets.</p>
+        <a class="lnk" href="#">Learn more <span aria-hidden="true">→</span></a>
+      </article>
+      <article class="svc">
+        <span class="svc-no">02</span>
+        <h3>Executive Search</h3>
+        <p class="sub">Direct search, assessment and advisory for C-level and
+          business-critical leadership positions.</p>
+        <a class="lnk" href="#">Learn more <span aria-hidden="true">→</span></a>
+      </article>
+      <article class="svc">
+        <span class="svc-no">03</span>
+        <h3>HR Consulting</h3>
+        <p class="sub">Organisational design, compensation frameworks and HR strategy
+          for market entry and growth.</p>
+        <a class="lnk" href="#">Learn more <span aria-hidden="true">→</span></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="band band-dark" id="test">
+  <span class="marker">04 TESTIMONIALS</span>
+  <div class="inner">
+    <p class="eyebrow"><i class="reticle"></i>Client testimonials</p>
+    <div class="quote">
+      <span class="qmark" aria-hidden="true">&ldquo;</span>
+      <blockquote>They presented four candidates. We hired two. That is a hit rate no
+        other partner has come close to in this market.</blockquote>
+      <div class="attrib">
+        <span class="sub" style="color:var(--dk-text);font-weight:600">Managing Director</span>
+        <span class="mono" style="color:var(--silver)">Automotive Supplier · Nordrhein-Westfalen</span>
+      </div>
+    </div>
+    <div class="dots" aria-hidden="true"><i></i><i></i><i></i></div>
+  </div>
+</section>
+<section class="band band-light" id="part">
+  <span class="marker">05 PARTNERS</span>
+  <div class="inner">
+    <p class="eyebrow"><i class="reticle"></i>Partners &amp; associations</p>
+    <h2>Where we are connected.</h2>
+    <div class="wall">
+      <span class="plogo">AHK GREATER<br>CHINA</span>
+      <span class="plogo">BDU</span>
+      <span class="plogo">IHK<br>DÜSSELDORF</span>
+      <span class="plogo">CHINA<br>NRW</span>
+      <span class="plogo">ECCT</span>
+      <span class="plogo">EUROCHAMBRES</span>
+      <span class="plogo">DCW</span>
+      <span class="plogo">VDMA</span>
+    </div>
+  </div>
+</section>
+
+<section class="band band-light" id="ev" style="padding-top:0">
+  <span class="marker">06 EVENTS</span>
+  <div class="inner">
+    <p class="eyebrow"><i class="reticle"></i>Events</p>
+    <h2>Where you'll find us.</h2>
+    <div class="grid3">
+      <article class="ev">
+        <div class="ev-img" aria-hidden="true"></div>
+        <div class="ev-body">
+          <div class="ev-meta"><span class="ev-date">2026.03.18</span><span class="ev-loc">Düsseldorf</span></div>
+          <h3>China–NRW Business Forum</h3>
+          <span class="ev-type">Forum</span>
+        </div>
+      </article>
+      <article class="ev">
+        <div class="ev-img" aria-hidden="true"></div>
+        <div class="ev-body">
+          <div class="ev-meta"><span class="ev-date">2026.02.05</span><span class="ev-loc">Frankfurt</span></div>
+          <h3>European Talent Roadshow</h3>
+          <span class="ev-type">Roadshow</span>
+        </div>
+      </article>
+      <article class="ev">
+        <div class="ev-img" aria-hidden="true"></div>
+        <div class="ev-body">
+          <div class="ev-meta"><span class="ev-date">2025.11.22</span><span class="ev-loc">Shanghai</span></div>
+          <h3>Hiring in Germany: Legal &amp; Cultural Briefing</h3>
+          <span class="ev-type">Seminar</span>
+        </div>
+      </article>
+    </div>
+    <div class="row-end"><a class="lnk" href="#">All events <span aria-hidden="true">→</span></a></div>
+  </div>
+</section>
+
+<section class="band band-dark" id="ctc">
+  <span class="marker">07 CONTACT</span>
+  <div class="inner">
+    <p class="eyebrow"><i class="reticle"></i>Let's talk</p>
+    <h2>Start a <span class="red">Conversation</span>.</h2>
+    <p class="lede" style="margin-top:18px">Tell us what you need to hire in Europe.
+      We reply within two business days.</p>
+    <div class="ctc">
+      <a class="btn" href="#">Start a Conversation <span aria-hidden="true">→</span></a>
+      <span class="or">or</span>
+      <a class="lnk mono" href="#" style="font-family:var(--mono);font-size:15px">hello@chilicareer.de</a>
+    </div>
+    <p class="mono" style="color:var(--silver)">Chili Career GmbH · Düsseldorf, Germany<br>51.2277° N, 6.7735° E</p>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="foot-in">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="#" style="margin-bottom:16px"><i class="reticle"></i>Chili Career</a>
+        <p class="mono" style="margin-top:14px;line-height:1.9">Chili Career GmbH<br>Düsseldorf, Germany<br>51.2277° N, 6.7735° E</p>
+        <p style="margin-top:18px"><a class="lnk" href="#">LinkedIn <span aria-hidden="true">→</span></a></p>
+      </div>
+      <div>
+        <h4>Leistungen</h4>
+        <ul>
+          <li><a href="#">Recruitment</a></li>
+          <li><a href="#">Executive Search</a></li>
+          <li><a href="#">HR Consulting</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Rechtliches</h4>
+        <ul>
+          <li><a href="#" lang="de">Impressum</a></li>
+          <li><a href="#" lang="de">Datenschutz</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bar">
+      <span>© 2026 Chili Career GmbH</span>
+      <span>We don't search. We target.</span>
+    </div>
+  </div>
+</footer>
+<section class="spec">
+  <div class="spec-in">
+    <h4>Design tokens — measured, not guessed</h4>
+    <div class="sw">
+      <div><span style="background:#0C0D0F;border-bottom:1px solid #24272B"></span><p><b>ink</b>#0C0D0F<br>oklch(.159 .005 264)</p></div>
+      <div><span style="background:#F6F6F7"></span><p><b>paper</b>#F6F6F7<br>oklch(.973 .001 286)</p></div>
+      <div><span style="background:#C7202F"></span><p><b>chili</b>#C7202F<br>oklch(.536 .199 24)</p></div>
+      <div><span style="background:#4E535A"></span><p><b>graphite</b>#4E535A<br>oklch(.440 .013 257)</p></div>
+      <div><span style="background:#8E9299"></span><p><b>silver</b>#8E9299<br>dark ground only</p></div>
+      <div><span style="background:#E2E3E6"></span><p><b>steel</b>#E2E3E6<br>hairlines</p></div>
+    </div>
+    <div class="ratios">
+      <div>ink on paper &mdash; <span class="ok">18.00:1 AA</span></div>
+      <div>graphite on paper &mdash; <span class="ok">7.18:1 AA</span></div>
+      <div>chili on paper &mdash; <span class="ok">5.29:1 AA</span></div>
+      <div>white on chili button &mdash; <span class="ok">5.71:1 AA</span></div>
+      <div>silver on paper &mdash; <i>2.89:1 fails &rarr; use graphite</i></div>
+      <div>silver on ink &mdash; <span class="ok">6.22:1 AA</span></div>
+      <div>#E8404F on ink &mdash; <span class="ok">4.89:1 AA</span> (dark-mode red)</div>
+      <div>competitors: Hays #002776 · Michael&nbsp;Page #124395 · Manatal #1976d2 &mdash; all blue</div>
+    </div>
+    <h4 style="margin-top:44px">One headline, three languages</h4>
+    <div class="grid3" style="margin-top:0">
+      <div>
+        <p class="mono" style="color:var(--silver);margin-bottom:10px">EN · −0.03em · 600</p>
+        <h3 style="color:var(--dk-text);font-size:28px">We don't search.<br>We <span class="red">target</span>.</h3>
+      </div>
+      <div lang="de">
+        <p class="mono" style="color:var(--silver);margin-bottom:10px">DE · −0.02em · 600 · hyphens</p>
+        <h3 style="color:var(--dk-text);font-size:28px">Wir suchen nicht.<br>Wir <span class="red">treffen</span>.</h3>
+      </div>
+      <div lang="zh">
+        <p class="mono" style="color:var(--silver);margin-bottom:10px">ZH · 0em · 500 · lh 1.75</p>
+        <h3 style="color:var(--dk-text);font-size:28px">我们不搜寻，<br>我们<span class="red">瞄准</span>。</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Section reveal — fires once, then disconnects. Small offset by design.
+  (function () {
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var targets = document.querySelectorAll('.band .inner, .spec-in');
+    targets.forEach(function (el) {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(12px)';
+      el.style.transition = 'opacity .5s ease, transform .5s cubic-bezier(.16,1,.3,1)';
+    });
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'none';
+        io.unobserve(e.target);
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px' });
+    targets.forEach(function (el) { io.observe(el); });
+  })();
+
+  // Language pills — demo only, shows the DE/ZH type treatment in place
+  (function () {
+    var copy = {
+      EN: { claim: ['We don\'t search. We ', 'target', '.'], cta: 'Start a Conversation',
+            sub: 'European Talent.<br>Strategic Hiring.', eyebrow: 'Düsseldorf · 51.2277° N, 6.7735° E', lang: 'en' },
+      DE: { claim: ['Wir suchen nicht. Wir ', 'treffen', '.'], cta: 'Gespräch beginnen',
+            sub: 'Europäische Talente.<br>Strategische Besetzung.', eyebrow: 'Düsseldorf · 51,2277° N, 6,7735° O', lang: 'de' },
+      '中文': { claim: ['我们不搜寻，我们', '瞄准', '。'], cta: '开始对话',
+            sub: '欧洲人才，<br>精准招募。', eyebrow: '德国 · 杜塞尔多夫 51.2277° N, 6.7735° E', lang: 'zh' }
+    };
+    var hero = document.querySelector('.hero-in');
+    document.querySelectorAll('.langs button').forEach(function (b) {
+      b.addEventListener('click', function () {
+        document.querySelectorAll('.langs button').forEach(function (x) {
+          x.setAttribute('aria-pressed', String(x === b));
+        });
+        var c = copy[b.textContent.trim()];
+        if (!c) return;
+        hero.setAttribute('lang', c.lang);
+        hero.querySelector('.eyebrow').innerHTML = '<i class="reticle"></i>' + c.eyebrow;
+        hero.querySelector('h2').innerHTML = c.sub;
+        hero.querySelector('.claim').innerHTML = c.claim[0] + '<span class="red">' + c.claim[1] + '</span>' + c.claim[2];
+        hero.querySelector('.btn').innerHTML = c.cta + ' <span aria-hidden="true">→</span>';
+        var r = hero.querySelector('.rule');
+        r.style.animation = 'none'; void r.offsetWidth;
+        r.style.animation = 'lock .6s cubic-bezier(.16,1,.3,1) both';
+      });
+    });
+  })();
+</script>
