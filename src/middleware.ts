@@ -1,8 +1,7 @@
-import { betterFetch } from '@better-fetch/fetch';
+import { getSessionCookie } from 'better-auth/cookies';
 import createMiddleware from 'next-intl/middleware';
 import { type NextRequest, NextResponse } from 'next/server';
 import { LOCALES, routing } from './i18n/routing';
-import type { Session } from './lib/auth-types';
 import {
   DEFAULT_LOGIN_REDIRECT,
   protectedRoutes,
@@ -22,22 +21,24 @@ const intlMiddleware = createMiddleware(routing);
  * to handle redirection. To avoid blocking requests by making API or database calls.
  */
 export default async function middleware(req: NextRequest) {
-  const { nextUrl, headers } = req;
-  console.log('>> middleware start, pathname', nextUrl.pathname);
+  const { nextUrl } = req;
 
-  // do not use getSession() here, it will cause error related to edge runtime
-  // const session = await getSession();
-  const { data: session } = await betterFetch<Session>(
-    '/api/auth/get-session',
-    {
-      baseURL: req.nextUrl.origin,
-      headers: {
-        cookie: req.headers.get('cookie') || '', // Forward the cookies from the request
-      },
-    }
-  );
-  const isLoggedIn = !!session;
-  // console.log('middleware, isLoggedIn', isLoggedIn);
+  /**
+   * Only the presence of the session cookie is checked here, per Better Auth's
+   * guidance for Next.js middleware: this runs on every matched request, so it
+   * must not make API or database calls.
+   *
+   * This previously fetched /api/auth/get-session on each request, which reached
+   * the database through the Drizzle adapter. That made every page — including
+   * the marketing pages, which have nothing to do with accounts — depend on a
+   * configured database, and fail outright without one.
+   *
+   * A cookie is not proof of a valid session: it can be expired or forged. That
+   * is fine for what happens below, which is redirect routing only. The pages
+   * and actions behind these routes verify the session server-side themselves,
+   * and remain the actual access control.
+   */
+  const isLoggedIn = !!getSessionCookie(req);
 
   // Get the pathname of the request (e.g. /zh/dashboard to /dashboard)
   const pathnameWithoutLocale = getPathnameWithoutLocale(
@@ -80,7 +81,6 @@ export default async function middleware(req: NextRequest) {
   }
 
   // Apply intlMiddleware for all routes
-  console.log('<< middleware end, applying intlMiddleware');
   return intlMiddleware(req);
 }
 
