@@ -8,10 +8,20 @@ import type { Locale } from 'next-intl';
  * 2. VERCEL_URL - Vercel 自动提供的部署 URL (生产/预览环境)
  * 3. localhost - 本地开发环境回退
  */
+/**
+ * NOTICE: only `NEXT_PUBLIC_*` variables survive in bundles that reach the
+ * browser — everything else is replaced with `undefined` at build time. This
+ * module is imported by client code (see lib/auth-client.ts), so `VERCEL_URL`
+ * alone left the base URL empty there. `NEXT_PUBLIC_VERCEL_URL` carries the same
+ * deployment hostname and is exposed by Vercel automatically, so it is tried
+ * first and the whole chain resolves in both environments.
+ */
+const vercelHost = process.env.NEXT_PUBLIC_VERCEL_URL ?? process.env.VERCEL_URL;
+
 const baseUrl =
   process.env.NEXT_PUBLIC_BASE_URL ??
-  (process.env.VERCEL_URL
-    ? `https://${process.env.VERCEL_URL}`
+  (vercelHost
+    ? `https://${vercelHost}`
     : `http://localhost:${process.env.PORT ?? 3000}`);
 
 /**
