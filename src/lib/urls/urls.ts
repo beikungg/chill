@@ -16,13 +16,13 @@ import type { Locale } from 'next-intl';
  * deployment hostname and is exposed by Vercel automatically, so it is tried
  * first and the whole chain resolves in both environments.
  */
-const vercelHost = process.env.NEXT_PUBLIC_VERCEL_URL ?? process.env.VERCEL_URL;
+const vercelHost = process.env.NEXT_PUBLIC_VERCEL_URL || process.env.VERCEL_URL;
 
 const baseUrl =
-  process.env.NEXT_PUBLIC_BASE_URL ??
+  process.env.NEXT_PUBLIC_BASE_URL ||
   (vercelHost
     ? `https://${vercelHost}`
-    : `http://localhost:${process.env.PORT ?? 3000}`);
+    : `http://localhost:${process.env.PORT || 3000}`);
 
 /**
  * Get the base URL of the application
